@@ -12,7 +12,6 @@ https://github.com/SaSaltyBurst/pf2e-resistance-adjustment/releases/latest/downl
 
 也可以手动把本仓库内容放到 `<Foundry 数据目录>/Data/modules/pf2e-resistance-adjustment/`。
 
-模块不输出控制台日志。
 
 ## 使用
 在规则元素界面使用AdjustResistance规则元素即可。
