@@ -1,0 +1,47 @@
+{
+  "id": "pf2e-resistance-adjustment",
+  "title": "PF2e Resistance Adjustment",
+  "description": "为 PF2e 增加 AdjustResistance 规则元素：对角色抗性做数值加减、设值、上限与条件化调整。",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "SaSaltyBurst"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14.361",
+    "verified": "14.368"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "zh",
+      "name": "中文（简体）",
+      "path": "lang/zh.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "7.2.3",
+          "verified": "8.5.1"
+        }
+      }
+    ]
+  },
+  "license": "MIT",
+  "readme": "README.md",
+  "url": "https://github.com/SaSaltyBurst/pf2e-resistance-adjustment",
+  "manifest": "https://github.com/SaSaltyBurst/pf2e-resistance-adjustment/releases/latest/download/module.json",
+  "download": "https://github.com/SaSaltyBurst/pf2e-resistance-adjustment/releases/latest/download/module.zip"
+}

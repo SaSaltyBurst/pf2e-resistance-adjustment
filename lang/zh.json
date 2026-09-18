@@ -1,0 +1,13 @@
+{
+  "PF2E": {
+    "RuleElement": {
+      "AdjustResistance": "调整抗性"
+    }
+  },
+  "pf2e-resistance-adjustment": {
+    "Settings": {
+      "EnabledName": "启用抗性调整引擎",
+      "EnabledHint": "关闭后 AdjustResistance 的 subtract / set / max 模式将不再生效（add / remove 仍按系统原生语义工作）。用于 A/B 对比排查。"
+    }
+  }
+}

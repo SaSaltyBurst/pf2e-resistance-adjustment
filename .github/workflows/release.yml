@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Foundry 用 module.json 的 version 判断新旧，所以 tag 必须与之一致（v1.0.0 ↔ 1.0.0）
+      - name: 校验 module.json 的 version 与 tag 一致
+        run: |
+          VERSION=$(node -p "require('./module.json').version")
+          TAG="${GITHUB_REF_NAME#v}"
+          echo "module.json version = $VERSION / tag = $TAG"
+          if [ "$VERSION" != "$TAG" ]; then
+            echo "::error::module.json version ($VERSION) 与 tag ($TAG) 不一致"
+            exit 1
+          fi
+
+      # module.json 必须位于 zip 根目录（Foundry 安装器先找根目录，找不到才剥一层包裹目录）
+      # git archive 只打包已跟踪文件，并按 .gitattributes 的 export-ignore 排除开发文件
+      - name: 打包 module.zip
+        run: git archive --format=zip -o module.zip HEAD
+
+      - name: 创建 Release（附带 module.json 与 module.zip）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            module.json module.zip \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes

@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.zip binary
+
+# git archive 打包（GitHub Actions 发版）时排除的开发文件
+.github/ export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore

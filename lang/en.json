@@ -1,0 +1,13 @@
+{
+  "PF2E": {
+    "RuleElement": {
+      "AdjustResistance": "Adjust Resistance"
+    }
+  },
+  "pf2e-resistance-adjustment": {
+    "Settings": {
+      "EnabledName": "Enable resistance adjustment engine",
+      "EnabledHint": "When disabled, the subtract / set / max modes of AdjustResistance are inert (add / remove keep working with the system's native semantics). Useful for A/B debugging."
+    }
+  }
+}
